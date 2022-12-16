@@ -255,6 +255,7 @@ def calculate_fid_given_paths(paths, batch_size, device, dims, num_workers=1):
 
     m1, s1 = compute_statistics_of_path(paths[0], model, batch_size,
                                         dims, device, num_workers)
+    print(m1.shape, s1.shape)
     m2, s2 = compute_statistics_of_path(paths[1], model, batch_size,
                                         dims, device, num_workers)
     fid_value = calculate_frechet_distance(m1, s1, m2, s2)
